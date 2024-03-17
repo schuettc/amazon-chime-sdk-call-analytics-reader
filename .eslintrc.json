@@ -34,11 +34,7 @@
     }
   },
   "ignorePatterns": [
-    "*.js",
-    "*.d.ts",
-    "node_modules/",
-    "*.generated.ts",
-    "coverage",
+    "src/resources/server/assets/site/**",
     "!.projenrc.ts",
     "!projenrc/**/*.ts"
   ],
@@ -222,6 +218,27 @@
     ]
   },
   "overrides": [
+    {
+      "files": [
+        "site/src/**/*.tsx",
+        "src/resources/**/*.ts"
+      ],
+      "rules": {
+        "indent": "off",
+        "@typescript-eslint/indent": "off"
+      }
+    },
+    {
+      "files": [
+        "src/resources/**/*.ts",
+        "src/*.ts",
+        "site/src/**/*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-require-imports": "off",
+        "import/no-extraneous-dependencies": "off"
+      }
+    },
     {
       "files": [
         ".projenrc.ts"
